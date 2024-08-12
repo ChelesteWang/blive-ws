@@ -1,5 +1,5 @@
 name: Deploy
-run-name: ${{ github.actor }} is running Deploy Actions ð
+run-name: deno is running Deploy Actions ð
 
 on:
   push:
