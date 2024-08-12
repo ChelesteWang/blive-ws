@@ -1,5 +1,5 @@
 name: Deploy
-run-name: deno is running Deploy Actions ð
+run-name: deno is running Deploy Actions 
 
 on:
   push:
@@ -14,18 +14,19 @@ jobs:
       contents: read # Needed to clone the repository
 
     steps:
-      - name: æåä»£ç 
+      - name: checkout
+      
         uses: actions/checkout@v4
 
-      - name: è®¾ç½® pnpm
+      - name: pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 7.x
 
-      - name: å®è£ä¾èµå¹¶æ§è¡æå»º
+      - name: deploy
         run: pnpm i && pnpm --prefix src/frontend i && npm run build
 
-      - name: é¨ç½²å° Deno Deploy
+      - name: Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: blive
